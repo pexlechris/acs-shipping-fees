@@ -1,0 +1,10 @@
+<?php
+
+//Adjust autocomplete fields just before the country.
+//May be you will need to increase the filter priority (now is 20)
+
+add_filter( 'woocommerce_checkout_fields', function ( $checkout_fields ) {
+	$checkout_fields['billing']['billing_autocomplete']['priority'] = 35;
+	$checkout_fields['shipping']['shipping_autocomplete']['priority'] = 35;
+	return $checkout_fields;
+}, 20 );
